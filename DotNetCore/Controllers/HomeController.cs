@@ -31,5 +31,23 @@ namespace DotNetCore.Controllers
         {
             return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
         }
+
+        // POST: Home/SaveUserName
+        [HttpPost]
+        public IActionResult SaveUserName(string userName)
+        {
+            // セッションにユーザー名を保存
+            HttpContext.Session.SetString("UserName", userName);
+            return RedirectToAction("Display");
+        }
+
+        // GET: Home/Display
+        public IActionResult Display()
+        {
+            // セッションからユーザー名を取得
+            var userName = HttpContext.Session.GetString("UserName");
+            ViewBag.UserName = userName;
+            return View();
+        }
     }
 }
