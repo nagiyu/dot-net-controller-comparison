@@ -30,4 +30,10 @@
             <p><a class="btn btn-outline-dark" href="https://go.microsoft.com/fwlink/?LinkId=301867">Learn more &raquo;</a></p>
         </section>
     </div>
+
+    <form action="@Url.Action("SaveUserName", "Home")" method="post">
+        <label for="userName">Name:</label>
+        <input type="text" id="userName" name="userName" required />
+        <button type="submit">Save</button>
+    </form>
 </main>

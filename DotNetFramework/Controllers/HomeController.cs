@@ -29,5 +29,23 @@ namespace DotNetFramework.Controllers
 
             return View();
         }
+
+        // POST: Home/SaveUserName
+        [HttpPost]
+        public ActionResult SaveUserName(string userName)
+        {
+            // セッションにユーザー名を保存
+            Session["UserName"] = userName;
+            return RedirectToAction("Display");
+        }
+
+        // GET: Home/Display
+        public ActionResult Display()
+        {
+            // セッションからユーザー名を取得
+            var userName = Session["UserName"]?.ToString();
+            ViewBag.UserName = userName;
+            return View();
+        }
     }
 }
