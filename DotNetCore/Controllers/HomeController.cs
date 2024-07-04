@@ -18,6 +18,11 @@ namespace DotNetCore.Controllers
             // カスタムヘッダーを追加
             Response.Headers.Append("X-Custom-Header", "This is a custom header value");
 
+            // 現在のURLを取得
+            string currentUrl = $"{Request.Scheme}://{Request.Host}{Request.Path}{Request.QueryString}";
+            // ビューに渡す
+            ViewBag.CurrentUrl = currentUrl;
+
             return View();
         }
 
