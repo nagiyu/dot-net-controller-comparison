@@ -13,6 +13,11 @@ namespace DotNetFramework.Controllers
             // カスタムヘッダーを追加
             Response.AddHeader("X-Custom-Header", "This is a custom header value");
 
+            // 現在のURLを取得
+            string currentUrl = Request.Url.ToString();
+            // ビューに渡す
+            ViewBag.CurrentUrl = currentUrl;
+
             return View();
         }
 
