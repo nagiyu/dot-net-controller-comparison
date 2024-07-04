@@ -1,0 +1,14 @@
+﻿@{
+    ViewBag.Title = "Display";
+}
+
+<h2>Welcome</h2>
+
+@if (ViewBag.UserName != null)
+{
+    <p>Hello, @ViewBag.UserName!</p>
+}
+else
+{
+    <p>User name is not set.</p>
+}
