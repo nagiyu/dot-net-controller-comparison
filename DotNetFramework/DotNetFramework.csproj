@@ -179,6 +179,7 @@
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Home\Display.cshtml" />
     <Content Include="Views\Home\GetMessage.cshtml" />
+    <Content Include="Views\Home\QueryDetails.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
