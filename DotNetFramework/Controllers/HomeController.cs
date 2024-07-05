@@ -77,5 +77,16 @@ namespace DotNetFramework.Controllers
             // QueryDetailsビューを表示
             return View();
         }
+
+        public ActionResult ParseUrl()
+        {
+            string rawUrl = Request.RawUrl;
+            string[] urlSegments = rawUrl.Split(new[] { '/' }, System.StringSplitOptions.RemoveEmptyEntries);
+
+            // ViewBag を使ってデータを渡す
+            ViewBag.UrlSegments = urlSegments;
+
+            return View();
+        }
     }
 }
