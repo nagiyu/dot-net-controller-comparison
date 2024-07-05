@@ -52,5 +52,16 @@ namespace DotNetFramework.Controllers
             ViewBag.UserName = userName;
             return View();
         }
+
+        // Ajaxリクエストと通常リクエストを処理するアクションメソッド
+        public ActionResult GetMessage()
+        {
+            if (Request.IsAjaxRequest())
+            {
+                return Json(new { message = "これはAjaxリクエストからのメッセージです。" }, JsonRequestBehavior.AllowGet);
+            }
+            ViewBag.Message = "これは通常リクエストからのメッセージです。";
+            return View();
+        }
     }
 }
