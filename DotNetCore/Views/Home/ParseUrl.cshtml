@@ -1,0 +1,12 @@
+﻿@{
+    ViewData["Title"] = "Parse URL";
+}
+
+<h2>Parse URL</h2>
+
+<ul>
+    @foreach (var segment in ViewData["UrlSegments"] as string[])
+    {
+        <li>@segment</li>
+    }
+</ul>
