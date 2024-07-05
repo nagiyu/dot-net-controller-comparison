@@ -63,5 +63,19 @@ namespace DotNetFramework.Controllers
             ViewBag.Message = "これは通常リクエストからのメッセージです。";
             return View();
         }
+
+        public ActionResult QueryDetails()
+        {
+            // クエリパラメータを取得
+            string name = Request.Params.Get("name");
+            string age = Request.Params.Get("age");
+
+            // ViewBagを使ってビューにデータを渡す
+            ViewBag.Name = name ?? "ゲスト";
+            ViewBag.Age = age ?? "不明";
+
+            // QueryDetailsビューを表示
+            return View();
+        }
     }
 }
