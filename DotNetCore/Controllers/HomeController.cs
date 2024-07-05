@@ -82,7 +82,7 @@ namespace DotNetCore.Controllers
 
         public IActionResult ParseUrl()
         {
-            string rawUrl = Request.Path + Request.QueryString.V;
+            string rawUrl = Request.Path + Request.QueryString.Value;
             string[] urlSegments = rawUrl.Split(new[] { '/' }, System.StringSplitOptions.RemoveEmptyEntries);
 
             // ViewData を使ってデータを渡す
