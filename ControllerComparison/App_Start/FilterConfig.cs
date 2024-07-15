@@ -1,4 +1,5 @@
-﻿using System.Web;
+﻿#if NETFRAMEWORK
+using System.Web;
 using System.Web.Mvc;
 
 namespace DotNetFramework
@@ -11,3 +12,4 @@ namespace DotNetFramework
         }
     }
 }
+#endif
