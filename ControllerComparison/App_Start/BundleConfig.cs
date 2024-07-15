@@ -1,4 +1,5 @@
-﻿using System.Web;
+﻿#if NETFRAMEWORK
+using System.Web;
 using System.Web.Optimization;
 
 namespace DotNetFramework
@@ -28,3 +29,4 @@ namespace DotNetFramework
         }
     }
 }
+#endif
