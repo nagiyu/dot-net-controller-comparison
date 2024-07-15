@@ -6,4 +6,8 @@
     <DefineConstants>NETCORE</DefineConstants>
   </PropertyGroup>
 
+  <ItemGroup>
+    <Content Remove="Views\**" />
+  </ItemGroup>
+
 </Project>

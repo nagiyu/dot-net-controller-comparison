@@ -1,7 +1,21 @@
+using Microsoft.AspNetCore.Mvc.Razor;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
+
+// RazorViewEngineOptionsを設定
+builder.Services.Configure<RazorViewEngineOptions>(options =>
+{
+    // 既存のビュー場所をクリア
+    options.ViewLocationFormats.Clear();
+
+    // カスタムビュー場所を追加
+    options.ViewLocationFormats.Add("/Views_Core/{1}/{0}.cshtml");
+    options.ViewLocationFormats.Add("/Views_Core/Shared/{0}.cshtml");
+});
+
 
 // セッションの設定を追加
 builder.Services.AddSession(options =>
